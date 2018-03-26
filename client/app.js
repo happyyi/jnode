@@ -1,7 +1,7 @@
 import React from 'react'
 import reactDom from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import App from './App.jsx'
+import App from './views/App.jsx'
 
 
 const root = document.getElementById('root')
@@ -18,7 +18,7 @@ render(App);
 
 if (module.hot) {
   module.hot.accept('./App.jsx', () => {
-    const NextApp = require('./App.jsx').default;// eslint-disable-line
+    const NextApp = require('./views/App.jsx').default;// eslint-disable-line
     render(NextApp);
   });
 }
