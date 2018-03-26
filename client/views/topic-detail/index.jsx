@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-export default class TopicDetail extends React.component {
+export default class TopicDetail extends React.Component {
   componentDidMount() {
     // to do
   }
