@@ -8,15 +8,27 @@ import { AppState } from '../../store/app-state'
 
 @inject('appState') @observer
 export default class TopicList extends React.Component {
+  constructor() {
+    super();
+    this.changeName = this.changeName.bind(this);
+  }
   componentDidMount() {
     // to do
   }
 
+  changeName(event) {
+    this.props.appState.changeName(event.target.value)
+  }
+
   render() {
-    return (<div>{this.props.appState.msg}</div>)
+    return (
+      <div>
+        <input type="text" onChange={this.changeName} />
+        <span>{this.props.appState.msg}</span>
+      </div>)
   }
 }
 
 TopicList.propTypes = {
-  appState: PropTypes.instanceOf(AppState).isRequired,
+  appState: PropTypes.instanceOf(AppState),
 }

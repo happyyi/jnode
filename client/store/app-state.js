@@ -4,7 +4,6 @@
 import {
   observable,
   computed,
-  autorun,
   action,
 } from 'mobx'
 
@@ -19,15 +18,14 @@ export class AppState {
   @action add() {
     this.count += 1
   }
+  @action changeName(name) {
+    this.name = name
+  }
 }
 
 const appState = new AppState();
 setInterval(() => {
   appState.add()
 }, 1000)
-
-autorun(() => {
-  console.log(appState.count)
-})
 
 export default appState;
